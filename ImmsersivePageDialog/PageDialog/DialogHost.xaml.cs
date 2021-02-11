@@ -87,6 +87,10 @@ namespace ImmsersivePageDialog.PageDialog
 
         #endregion
 
+        Frame frame;
+        MainPage page;
+
+
         public DialogHost()
         {
             IsShowingPage = false;
@@ -102,7 +106,7 @@ namespace ImmsersivePageDialog.PageDialog
             rootGrid.Visibility = Visibility.Visible;
             contentFrame.Visibility = Visibility.Visible;
             contentFrame.Navigate(page, null, new SuppressNavigationTransitionInfo());
-            await Task.Delay(150);
+            //await Task.Delay(150);
             ContentHost.Visibility = Visibility.Visible;
         }
 
@@ -112,7 +116,7 @@ namespace ImmsersivePageDialog.PageDialog
             rootGrid.Visibility = Visibility.Visible;
             webView.Visibility = Visibility.Visible;
             webView.Navigate(url);
-            await Task.Delay(150);
+            //await Task.Delay(150);
             ContentHost.Visibility = Visibility.Visible;
         }
 
@@ -120,7 +124,7 @@ namespace ImmsersivePageDialog.PageDialog
         {
             if (IsShowingPage == true)
             {
-                closeDialog();
+                page.CloseDialog();
             }
             else
             {
@@ -130,7 +134,7 @@ namespace ImmsersivePageDialog.PageDialog
                 }
                 else
                 {
-                    closeDialog();
+                    page.CloseDialog();
                 }
             }
         }
@@ -160,6 +164,12 @@ namespace ImmsersivePageDialog.PageDialog
         private void refreshButton_Click(object sender, RoutedEventArgs e)
         {
             webView.Refresh();
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            frame = (Frame)Window.Current.Content;
+            page = (MainPage)frame.Content;
         }
     }
 }

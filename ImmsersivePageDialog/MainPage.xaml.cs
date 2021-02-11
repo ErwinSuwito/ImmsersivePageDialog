@@ -12,6 +12,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Microsoft.Toolkit.Uwp.UI.Animations;
+using System.Numerics;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -29,16 +31,19 @@ namespace ImmsersivePageDialog
 
         public void Navigate(Type page)
         {
+            background.Scale = new Vector3(1.05f, 1.05f, 1.05f);
             dialogHost.Navigate(page);
         }
 
         public void Navigate(Uri url)
         {
+            background.Scale = new Vector3(1.05f, 1.05f, 1.05f);
             dialogHost.Navigate(url);
         }
 
         public void CloseDialog()
         {
+            background.Scale = new Vector3(1, 1, 1);
             dialogHost.closeDialog();
         }
 

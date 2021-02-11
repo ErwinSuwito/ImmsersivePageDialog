@@ -11,7 +11,10 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Border>
+        <Border x:Name="background" Margin="-24,-24,-24,-24">
+            <Border.ScaleTransition>
+                <Vector3Transition />
+            </Border.ScaleTransition>
             <Border.Background>
                 <ImageBrush ImageSource="ms-appx:///Assets/wave.jpg" />
             </Border.Background>
