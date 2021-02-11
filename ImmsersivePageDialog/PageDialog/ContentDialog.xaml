@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="ImmsersivePageDialog.PageDialog.ContentDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ImmsersivePageDialog.PageDialog"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    MinHeight="200" MaxHeight="720"
+    MinWidth="320" MaxWidth="520">
+
+    <Grid Padding="20,20,20,20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Style="{ThemeResource SubtitleTextBlockStyle}" 
+                   Text=""
+                   TextWrapping="Wrap" MaxLines="3"
+                   Grid.Row="0"/>
+        <TextBlock Text="" 
+                   Grid.Row="1" TextWrapping="Wrap"
+                   Margin="0,12,0,16"/>
+        <controls:UniformGrid Grid.Row="2" Rows="1">
+            <Button Grid.Column="0" Content="Primary" Margin="5" Padding="6,3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                    Visibility="Visible"/>
+            <Button Grid.Column="1" Content="Secondary" Margin="5" Padding="6,3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                    Visibility="Visible"/>
+            <Button Grid.Column="2" Content="Close" Margin="5" Padding="6,3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                    Visibility="Visible"/>
+        </controls:UniformGrid>
+    </Grid>
+</Page>
