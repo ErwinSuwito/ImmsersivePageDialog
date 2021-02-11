@@ -25,6 +25,7 @@ namespace ImmsersivePageDialog.PageDialog
     /// </summary>
     public sealed partial class DialogHost : Page, INotifyPropertyChanged
     {
+        #region "DependpencyProperty and Variables"
         public event PropertyChangedEventHandler PropertyChanged = delegate { };
         public void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
@@ -84,6 +85,7 @@ namespace ImmsersivePageDialog.PageDialog
         public static readonly DependencyProperty AllowSoftCloseProperty =
             DependencyProperty.Register("AllowSoftClose", typeof(bool), typeof(DialogHost), new PropertyMetadata(0));
 
+        #endregion
 
         public DialogHost()
         {
@@ -141,7 +143,7 @@ namespace ImmsersivePageDialog.PageDialog
             }
         }
 
-        private void closeDialog()
+        public void closeDialog()
         {
             ContentHost.Visibility = Visibility.Collapsed;
             rootGrid.Visibility = Visibility.Collapsed;

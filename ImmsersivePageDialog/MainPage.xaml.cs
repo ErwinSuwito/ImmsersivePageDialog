@@ -27,31 +27,24 @@ namespace ImmsersivePageDialog
             this.InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public void Navigate(Type page)
         {
-            dialogHost.Navigate(typeof(ImmsersivePageDialog.PageDialog.SettingsPage));
+            dialogHost.Navigate(page);
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        public void Navigate(Uri url)
         {
-            dialogHost.Navigate(new Uri("https://msn.com/"));
+            dialogHost.Navigate(url);
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        public void CloseDialog()
         {
-            dialogHost.Navigate(typeof(ImmsersivePageDialog.PageDialog.FaceRecIntroPage));
+            dialogHost.closeDialog();
         }
 
-        private async void Button_Click_3(object sender, RoutedEventArgs e)
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            //dialogHost.Navigate(typeof(ImmsersivePageDialog.PageDialog.ContentDialog));
-            ContentDialog contentDialog = new ContentDialog()
-            {
-                Title = "Hello",
-                CloseButtonText = "Close"
-            };
-
-            await contentDialog.ShowAsync();
+            rootFrame.Navigate(typeof(ControlPage), null);
         }
     }
 }

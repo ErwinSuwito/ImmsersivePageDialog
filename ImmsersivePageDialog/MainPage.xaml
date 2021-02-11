@@ -7,6 +7,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
+    Loaded="Page_Loaded"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
@@ -15,13 +16,9 @@
                 <ImageBrush ImageSource="ms-appx:///Assets/wave.jpg" />
             </Border.Background>
         </Border>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center"
-                    Orientation="Horizontal">
-            <Button Content="Show Settings" Margin="0,0,8,0" Click="Button_Click" />
-            <Button Content="Show FaceRecIntro" Margin="0,0,8,0" Click="Button_Click_2" />
-            <Button Content="Open News" Margin="0,0,8,0" Click="Button_Click_1" />
-        </StackPanel>
-
+        <Frame x:Name="rootFrame">
+            
+        </Frame>
         <host:DialogHost x:Name="dialogHost" AllowSoftClose="True"/>
     </Grid>
 </Page>
