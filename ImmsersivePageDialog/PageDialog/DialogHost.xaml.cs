@@ -143,7 +143,7 @@ namespace ImmsersivePageDialog.PageDialog
         {
             if (AllowSoftClose == true)
             {
-                closeDialog();
+                page.CloseDialog();
             }
         }
 
